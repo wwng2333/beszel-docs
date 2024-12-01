@@ -1,4 +1,4 @@
-# Install Hub
+# Hub Installation
 
 Beszel supports installation via Docker or using binaries.
 

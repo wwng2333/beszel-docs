@@ -1,4 +1,4 @@
-# Monitoring GPUs
+# GPU Monitoring (binary agent only)
 
 > [!IMPORTANT] Binary agent only
 > To monitor GPUs , you **must use the binary agent** and have `nvidia-smi` (Nvidia) or `rocm-smi` (AMD) installed on the system.
@@ -12,6 +12,10 @@ Installing `rocm-smi-lib` on Arch and Debian places the `rocm-smi` binary in `/o
 ```bash
 sudo ln -s /opt/rocm/bin/rocm-smi /usr/local/bin/rocm-smi
 ```
+
+## Nvidia Jetson
+
+Nvidia Jetson devices are not compatible with `nvidia-smi`, so you need to install `tegrastats` on the system instead.
 
 ## Intel GPUs
 

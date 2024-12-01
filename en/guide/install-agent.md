@@ -1,4 +1,4 @@
-# Install Agent
+# Agent Installation
 
 Beszel Agent also supports installation via Docker or using binaries.
 
@@ -29,8 +29,8 @@ On the web panel, an installation command is provided for copying. You can choos
 ```yaml
 services:
   beszel-agent:
-    image: "henrygd/beszel-agent"
-    container_name: "beszel-agent"
+    image: 'henrygd/beszel-agent'
+    container_name: 'beszel-agent'
     restart: unless-stopped
     network_mode: host
     volumes:
@@ -39,7 +39,7 @@ services:
       # - /mnt/disk1/.beszel:/extra-filesystems/disk1:ro
     environment:
       PORT: <port>
-      KEY: "<public key>"
+      KEY: '<public key>'
       # FILESYSTEM: /dev/sda1 # override the root partition / device for disk I/O stats
 ```
 

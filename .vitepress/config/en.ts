@@ -76,17 +76,20 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
 				{ text: 'GPU Monitoring', link: 'gpu' },
 				{ text: 'Podman Monitoring', link: 'podman' },
 				{ text: 'Compiling', link: 'compiling' },
+				{ text: 'REST API', link: 'rest-api' },
+				{ text: 'User Roles', link: 'user-roles' },
 			],
 		},
 		{
 			text: 'Troubleshooting',
 			collapsed: false,
-			items: [{ text: 'FAQ', link: 'faq' }],
+			items: [{ text: 'Common Issues', link: 'faq' }],
 		},
 		{
 			text: 'About',
 			collapsed: false,
 			items: [
+				{ text: 'Security', link: 'security' },
 				{ text: 'Contributing', link: 'contributing' },
 				{ text: 'Multilingual and Localization', link: 'i18n' },
 			],
