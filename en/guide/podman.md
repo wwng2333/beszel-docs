@@ -20,8 +20,9 @@ You must run the agent as the same user that runs Podman.
 ::: code-group
 
 ```ini [beszel-agent.service]
-# User=beszel
-User=1000
+[Service]
+User=beszel # [!code --]
+User=1000 # [!code ++]
 ```
 
 ```bash [podman run]

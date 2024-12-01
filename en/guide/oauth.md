@@ -15,7 +15,7 @@ You can authenticate users with an OAuth2 provider, like Google, GitHub, or Micr
 
 [![edit-users-collection](/image/edit-users-collection.png)](/image/edit-users-collection.png)
 
-3. In the "Options" tab, enable Oauth2 and add your provider.
+3. In the "Options" tab, enable OAuth2 and add your provider.
 
 [![edit-users-collection-options](/image/oauth-settings.png)](/image/oauth-settings.png)
 
