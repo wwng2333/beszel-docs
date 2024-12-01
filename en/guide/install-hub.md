@@ -15,7 +15,6 @@ Both methods will start the Beszel service on port `8090` and mount the `./besze
 ::: code-group
 
 ```yaml [docker-compose.yml]
-# Run with docker compose up -d
 services:
   beszel:
     image: 'henrygd/beszel'

@@ -52,18 +52,44 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
 	return [
 		{
 			text: 'Introduction',
+			collapsed: false,
 			items: [
 				{ text: 'What is Beszel?', link: 'what-is-beszel' },
 				{ text: 'Getting Started', link: 'getting-started' },
-				{ text: 'Install Hub', link: 'install-hub' },
-				{ text: 'Install Agent', link: 'install-agent' },
 			],
 		},
 		{
-			text: 'Contribute',
+			text: 'Installation',
+			collapsed: false,
 			items: [
+				{ text: 'Hub Installation', link: 'install-hub' },
+				{ text: 'Agent Installation', link: 'install-agent' },
+			],
+		},
+		{
+			text: 'Configuration / Guides',
+			collapsed: false,
+			items: [
+				{ text: 'Environment Variables', link: 'environment-variables' },
+				{ text: 'OAuth / OIDC', link: 'oauth' },
+				{ text: 'Additional Disks', link: 'additional-disks' },
+				{ text: 'GPU Monitoring', link: 'gpu' },
+				{ text: 'Podman Monitoring', link: 'podman' },
+				{ text: 'Compiling', link: 'compiling' },
+			],
+		},
+		{
+			text: 'Troubleshooting',
+			collapsed: false,
+			items: [{ text: 'FAQ', link: 'faq' }],
+		},
+		{
+			text: 'About',
+			collapsed: false,
+			items: [
+				{ text: 'Contributing', link: 'contributing' },
 				{ text: 'Multilingual and Localization', link: 'i18n' },
 			],
-		}
+		},
 	]
 }

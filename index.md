@@ -14,8 +14,11 @@ hero:
       text: What is Beszel?
       link: /guide/what-is-beszel
     - theme: alt
-      text: Getting started
+      text: Quickstart
       link: /guide/getting-started
+    - theme: alt
+      text: GitHub
+      link: https://github.com/henrygd/beszel
   image:
     src: https://assets.henrygd.me/beszel/captures/dashboard.png
     alt: Dashboard screenshot
@@ -29,7 +32,7 @@ features:
   - title: Simple
     details: Easy setup, no need for public internet exposure.
     icon: <svg width="32" height="32" viewBox="0 0 16 16"><path fill="none" stroke="#eed49f" stroke-linecap="round" stroke-linejoin="round" d="M2.85 9.301a.644.65 0 0 1-.502-1.06L8.72 1.605a.322.325 0 0 1 .554.3L8.039 5.82a.644.65 0 0 0 .605.878h4.506a.644.65 0 0 1 .502 1.06L7.28 14.395a.322.325 0 0 1-.554-.3l1.236-3.916a.644.65 0 0 0-.605-.878Z"/></svg>
-  - title: Docker stats
+  - title: Docker / Podman stats
     details: Tracks CPU, memory, and network usage history for each container.
     icon: <svg width="32" height="32" viewBox="0 0 16 16"><path fill="none" stroke="#8aadf4" stroke-linecap="round" stroke-linejoin="round" d="M.5 8.5H11l.75-.5a5.35 5.35 0 0 1 0-3.5c1 .6 1 1.88 1.74 2c.77-.09 1.23.01 2 .52c0 0-.97 1.77-2.5 1.98c-1.93 3.65-4.5 5.5-6.98 5.5C0 14.5.5 8.5.5 8.5m1 0v-2m0 0h8m-6 2v-4m0 0h4m-2-2h2m-2 6v-6m2 6v-6m2 6v-2"/></svg>
   - title: Alerts

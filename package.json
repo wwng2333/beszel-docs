@@ -4,11 +4,14 @@
 	"version": "0.6.2",
 	"type": "module",
 	"devDependencies": {
-		"@types/bun": "^1.1.12",
-		"vitepress": "^1.4.1",
-		"vue": "^3.5.12"
+		"@types/bun": "^1.1.14",
+		"vitepress": "^1.5.0",
+		"vue": "^3.5.13"
 	},
 	"scripts": {
+		"dev": "vitepress dev",
+		"build": "vitepress build",
+		"preview": "vitepress preview",
 		"docs:dev": "vitepress dev",
 		"docs:build": "vitepress build",
 		"docs:preview": "vitepress preview"

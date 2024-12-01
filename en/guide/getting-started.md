@@ -1,6 +1,6 @@
 # Getting started
 
-## Preparation
+## Background
 
 Beszel consists of two main components: the hub and the agent.
 
@@ -9,7 +9,7 @@ Beszel consists of two main components: the hub and the agent.
 - **Agent**: Runs on each system you want to monitor, creating a minimal SSH server to communicate system metrics to the hub.
 
 :::tip
-Beszel uses active probing, where the ***Hub*** requests data from the ***Agent***. This setup requires the ***Agent*** to have an open port accessible by the ***Hub***. If the ***Agent*** is on the public internet, it must have a public IP address with an open port for the ***Hub*** to access.
+Beszel uses active probing, where the **_Hub_** requests data from the **_Agent_**. This setup requires the **_Agent_** to have an open port accessible by the **_Hub_**. If the **_Agent_** is on the public internet, it must have a public IP address with an open port for the **_Hub_** to access.
 
 There is no need to expose the Hub to the public internet; the active mode is relatively safer.
 :::
