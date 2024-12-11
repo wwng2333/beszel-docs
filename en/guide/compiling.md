@@ -6,8 +6,6 @@ Both the hub and agent are written in Go, so you can easily build them yourself,
 
 Run `make` in `/beszel`. This creates a `build` directory containing the binaries.
 
-### Agent & Hub
-
 ```bash
 # Builds both the agent and hub
 make

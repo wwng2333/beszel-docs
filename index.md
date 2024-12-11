@@ -8,11 +8,11 @@ hero:
   width: 1300
   name: 'Beszel'
   text: 'Simple, lightweight server monitoring'
-  tagline: With Docker stats, historical data, and alerts
+  tagline: With Docker stats, historical data, and alerts.
   actions:
     - theme: brand
       text: What is Beszel?
-      link: /guide/what-is-beszel
+      link: /guide/getting-started
     - theme: alt
       text: Quickstart
       link: /guide/getting-started
