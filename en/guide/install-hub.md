@@ -1,27 +1,21 @@
 # Hub Installation
 
-Beszel supports installation via Docker or using binaries.
+Beszel supports installation via Docker/ Podman or single binary file.
 
-- [Docker](#docker)
-- [Binary](#binary)
-  - [Quick script](#_1-quick-script)
-  - [Manual download and startup](#_2-manual-download-and-startup)
-  - [Build and Startup](#_3-build-and-startup)
+## Docker or Podman
 
-## Docker
-
-Both methods will start the Beszel service on port `8090` and mount the `./beszel_data` directory for persistent storage.
+All methods will start the Beszel service on port `8090` and mount the `./beszel_data` directory for persistent storage.
 
 ::: code-group
 
 ```yaml [docker-compose.yml]
 services:
   beszel:
-    image: 'henrygd/beszel'
-    container_name: 'beszel'
+    image: henrygd/beszel
+    container_name: beszel
     restart: unless-stopped
     ports:
-      - '8090:8090'
+      - 8090:8090
     volumes:
       - ./beszel_data:/beszel_data
 ```
@@ -31,7 +25,17 @@ mkdir -p ./beszel_data && \
 docker run -d \
   -v ./beszel_data:/beszel_data \
   -p 8090:8090 \
+  --name beszel \
   henrygd/beszel
+```
+
+```bash [podman run]
+mkdir -p ./beszel_data && \
+podman run -d \
+  -v ./beszel_data:/beszel_data \
+  -p 8090:8090 \
+  --name beszel \
+  docker.io/henrygd/beszel
 ```
 
 :::

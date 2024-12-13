@@ -1,36 +1,37 @@
 # Agent Installation
 
-Beszel Agent also supports installation via Docker or using binaries.
+Beszel Agent supports installation via Docker / Podman container or single binary file.
 
-- [Docker](#docker)
-- [Binary](#binary)
-  - [Quick script](#_1-quick-script)
-  - [Manual download and startup](#_2-manual-download-and-startup)
-  - [Build and Startup](#_3-build-and-startup)
+<!-- [[toc]] -->
 
 ## Requirements
 
-The server needs to open a port for the Hub to connect, so it is not suitable for servers in a private network (and not in the same private network as the Hub).
+If the agent and hub are on different hosts, you may need to update the firewall on your agent system to allow incoming TCP connections on the agent's port.
 
-## Hub
+Alternatively, you can use software like Wireguard or Cloudflare Tunnel ([instructions](https://github.com/henrygd/beszel/discussions/250)) to securely bypass the firewall.
 
-On the web panel, an installation command is provided for copying. You can choose to copy the command directly for installation or refer to this document to continue with manual installation.
+## Using the Hub
+
+The `docker-compose.yml` or binary install command is provided for copy/paste in the hub's web UI when adding a new system.
 
 <div style="display: flex;">
     <img src="/image/agent-1.webp" width="50%" />
     <img src="/image/agent-2.webp" width="50%" />
 </div>
 
-## Docker
+## Docker or Podman
 
-- `PROT` : Port
-- `KEY` : Public Key
+::: tip Connecting to agent on the same host as the hub
+todo
+:::
 
-```yaml
+::: code-group
+
+```yaml [docker-compose.yml]
 services:
   beszel-agent:
-    image: 'henrygd/beszel-agent'
-    container_name: 'beszel-agent'
+    image: henrygd/beszel-agent
+    container_name: beszel-agent
     restart: unless-stopped
     network_mode: host
     volumes:
@@ -38,10 +39,39 @@ services:
       # monitor other disks / partitions by mounting a folder in /extra-filesystems
       # - /mnt/disk1/.beszel:/extra-filesystems/disk1:ro
     environment:
-      PORT: <port>
+      PORT: 45876
       KEY: '<public key>'
-      # FILESYSTEM: /dev/sda1 # override the root partition / device for disk I/O stats
 ```
+
+```bash [docker run]
+docker run -d \
+  --name beszel-agent \
+  --network host \
+  --restart unless-stopped \
+  -v /var/run/docker.sock:/var/run/docker.sock:ro \
+  -e KEY="<public key>" \
+  -e PORT=45876 \
+  henrygd/beszel-agent:latest
+```
+
+```bash [podman run]
+podman run -d \
+  --name beszel-agent \
+  --network host \
+  --restart unless-stopped \
+  -v /var/run/docker.sock:/var/run/docker.sock:ro \
+  -e KEY="<public key>" \
+  -e PORT=45876 \
+  docker.io/henrygd/beszel-agent:latest
+```
+
+### Why host network mode?
+
+The agent must use host network mode to access network interface stats, which automatically exposes the port. Change the port using an environment variable if needed.
+
+If you don't need network stats, remove that line from the compose file and map the port manually.
+
+:::
 
 ## Binary
 
