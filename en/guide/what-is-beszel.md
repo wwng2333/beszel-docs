@@ -39,6 +39,18 @@ Beszel consists of two main components: the **hub** and the **agent**.
 
 [![Dashboard](/image/dashboard.png)](/image/dashboard.png)
 
-todo: full system page screenshot
+[![System page](/image/system.png)](/image/system.png)
 
-todo: alert screenshot
+<!-- [![Alerts](/image/alerts.png)](/image/alerts.png) -->
+
+[![Notification Settings](/image/settings-notifications.png)](/image/settings-notifications.png)
+
+## Supported metrics
+
+- **CPU usage** - Host system and Docker / Podman containers.
+- **Memory usage** - Host system and containers. Includes swap and ZFS ARC.
+- **Disk usage** - Host system. Supports multiple partitions and devices.
+- **Disk I/O** - Host system. Supports multiple partitions and devices.
+- **Network usage** - Host system and containers.
+- **Temperature** - Host system sensors.
+- **GPU usage / temperature / power draw** - Nvidia and AMD only. Must use binary agent.

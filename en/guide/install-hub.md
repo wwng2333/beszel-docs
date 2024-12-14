@@ -14,39 +14,33 @@ services:
     image: henrygd/beszel
     container_name: beszel
     restart: unless-stopped
+    ports:
+      - 8090:8090
     volumes:
       - ./beszel_data:/beszel_data
-    network_mode: host
-    command: serve --http=0.0.0.0:8090
 ```
 
 ```bash [docker run]
 mkdir -p ./beszel_data && \
 docker run -d \
   --name beszel \
-  --network=host \
   --restart=unless-stopped \
   -v ./beszel_data:/beszel_data \
-  henrygd/beszel serve --http=0.0.0.0:8090
+  -p 8090:8090 \
+  henrygd/beszel
 ```
 
 ```bash [podman run]
 mkdir -p ./beszel_data && \
 podman run -d \
   --name beszel \
-  --network=host \
   --restart=unless-stopped \
   -v ./beszel_data:/beszel_data \
-  docker.io/henrygd/beszel serve --http=0.0.0.0:8090
+  -p 8090:8090 \
+  docker.io/henrygd/beszel
 ```
 
 :::
-
-### Why host network mode?
-
-The agent must use host network mode to access network interface metrics, so we're also using `network_mode: host` here. This just makes it easier to connect to an agent running on the same machine.
-
-Host network mode automatically exposes the address/port specified in the `serve` command, so there is no need to map a port manually.
 
 ## Binary
 
