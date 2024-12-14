@@ -7,6 +7,7 @@ export const shared = defineConfig({
 	appearance: 'dark',
 	lastUpdated: true,
 	cleanUrls: true,
+	ignoreDeadLinks: 'localhostLinks',
 	rewrites: {
 		'en/:rest*': ':rest*',
 	},
