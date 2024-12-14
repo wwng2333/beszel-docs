@@ -21,10 +21,6 @@ The `docker-compose.yml` or binary install command is provided for copy/paste in
 
 ## Docker or Podman
 
-::: tip Connecting to agent on the same host as the hub
-todo
-:::
-
 ::: code-group
 
 ```yaml [docker-compose.yml]
@@ -67,9 +63,9 @@ podman run -d \
 
 ### Why host network mode?
 
-The agent must use host network mode to access network interface stats, which automatically exposes the port. Change the port using an environment variable if needed.
+The agent must use host network mode to access network interface metrics, which automatically exposes the port. Change the port using an environment variable if needed.
 
-If you don't need network stats, remove that line from the compose file and map the port manually.
+If you don't need network stats, you can remove that line from the compose file and map the port manually.
 
 :::
 

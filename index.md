@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: What is Beszel?
-      link: /guide/getting-started
+      link: /guide/what-is-beszel
     - theme: alt
       text: Quickstart
       link: /guide/getting-started

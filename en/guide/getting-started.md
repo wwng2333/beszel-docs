@@ -1,26 +1,26 @@
 # Getting started
 
-Beszel is a lightweight server monitoring platform that includes Docker statistics, historical data, and alert functions.
+For more background information about Beszel, see the [What is Beszel?](./what-is-beszel.md) page.
 
-It has a friendly web interface, simple configuration, and is ready to use out of the box. It supports automatic backup, multi-user, OAuth authentication, and API access.
+## 1. Install the Hub
 
-## Background
+Beszel supports installation via Docker/ Podman or single binary file.
 
-Beszel consists of two main components: the **hub** and the **agent**.
-
-- **Hub**: A web application built on [PocketBase](https://pocketbase.io/) that provides a dashboard for viewing and managing connected systems.
-
-- **Agent**: Runs on each system you want to monitor, creating a minimal SSH server to communicate system metrics to the hub.
-
-<!-- :::tip
-Beszel uses active probing, where the **_Hub_** requests data from the **_Agent_**. This setup requires the **_Agent_** to have an open port accessible by the **_Hub_**. If the **_Agent_** is on the public internet, it must have a public IP address with an open port for the **_Hub_** to access.
-
-There is no need to expose the Hub to the public internet; the active mode is relatively safer.
-::: -->
-
-## Installation
-
-Beszel supports installation via Docker or using binaries.
-
-- [Docker](./install-hub#docker)
+- [Docker / Podman](./install-hub#docker-or-podman)
 - [Binary](./install-hub#binary)
+
+## 2. Create an admin user
+
+Start the hub and open http://localhost:8090 (or whatever address you're using).
+
+You will be prompted to create an account:
+
+[![Screenshot of user creation form](/image/admin-creation.png)](/image/admin-creation.png)
+
+## 3. Create your first system
+
+Click the "Add system" button to open the system creation dialog:
+
+[![Screenshot of system creation form](/image/add-system.png)](/image/add-system.png)
+
+## 4. Start the agent

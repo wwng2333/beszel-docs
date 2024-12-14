@@ -51,10 +51,17 @@ function nav(): DefaultTheme.NavItem[] {
 function sidebarGuide(): DefaultTheme.SidebarItem[] {
 	return [
 		{
+			text: 'Introduction',
+			collapsed: false,
+			items: [
+				{ text: 'What is Beszel?', link: 'what-is-beszel' },
+				{ text: 'Getting Started', link: 'getting-started' },
+			],
+		},
+		{
 			text: 'Installation',
 			collapsed: false,
 			items: [
-				{ text: 'Getting Started', link: 'getting-started' },
 				{ text: 'Hub Installation', link: 'install-hub' },
 				{ text: 'Agent Installation', link: 'install-agent' },
 			],
