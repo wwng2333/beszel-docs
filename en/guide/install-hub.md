@@ -48,11 +48,11 @@ podman run -d \
 
 ## Binary
 
-There are multiple ways to install using binary files. You can choose one of the methods below that you prefer.
+There are multiple ways to install the binary. Choose your preference below.
 
 ### 1. Quick script (Linux)
 
-Use the command below to download and run our `install-hub.sh` script. This will install the latest binary and create a systemd service to keep it running after reboot.
+This command downloads and runs our `install-hub.sh` script. The script installs the latest binary and creates a systemd service to keep it running after reboot.
 
 - `-u` : Uninstall
 - `-p <port>` : Specify a port number (default: 8090)
@@ -61,13 +61,13 @@ Use the command below to download and run our `install-hub.sh` script. This will
 curl -sL https://raw.githubusercontent.com/henrygd/beszel/main/supplemental/scripts/install-hub.sh -o install-hub.sh && chmod +x install-hub.sh && ./install-hub.sh
 ```
 
-### 2. Manual Download and Startup
+### 2. Manual download and start
 
 ::: details Click to expand/collapse
 
 #### Download
 
-Download the latest binary from [releases](https://github.com/henrygd/beszel/releases) that matches your server's CPU architecture and run it manually. However, you will need to create a service manually to keep it running after reboot.
+Download the latest binary from [releases](https://github.com/henrygd/beszel/releases) that matches your server's CPU architecture and run it manually. You will need to create a service manually to keep it running after reboot.
 
 ```bash
 curl -sL "https://github.com/henrygd/beszel/releases/latest/download/beszel_$(uname -s)_$(uname -m | sed 's/x86_64/amd64/' | sed 's/armv7l/arm/' | sed 's/aarch64/arm64/').tar.gz" | tar -xz -O beszel | tee ./beszel >/dev/null && chmod +x beszel
@@ -85,9 +85,40 @@ curl -sL "https://github.com/henrygd/beszel/releases/latest/download/beszel_$(un
 ./beszel update
 ```
 
+#### Create a service (optional)
+
+If your system uses systemd, you can create a service to keep the hub running after reboot.
+
+1. Create a service file in `/etc/systemd/system/beszel.service`.
+
+```ini
+[Unit]
+Description=Beszel Hub
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=3
+User=root
+WorkingDirectory={/path/to/working/directory}
+ExecStart={/path/to/working/directory}/beszel serve --http "0.0.0.0:8090"
+
+[Install]
+WantedBy=multi-user.target
+```
+
+2. Enable and start the service.
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable beszel.service
+sudo systemctl start beszel.service
+```
+
 :::
 
-### 3. Manual Compile and Startup
+### 3. Manual compile and start
 
 ::: details Click to expand/collapse
 
@@ -105,6 +136,37 @@ See [Compiling](./compiling.md) for information on how to compile the hub yourse
 
 ```bash
 ./beszel update
+```
+
+#### Create a service (optional)
+
+If your system uses systemd, you can create a service to keep the hub running after reboot.
+
+1. Create a service file in `/etc/systemd/system/beszel.service`.
+
+```ini
+[Unit]
+Description=Beszel Hub
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5
+User=root
+WorkingDirectory={/path/to/working/directory}
+ExecStart={/path/to/working/directory}/beszel serve --http "0.0.0.0:8090"
+
+[Install]
+WantedBy=multi-user.target
+```
+
+2. Enable and start the service.
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable beszel.service
+sudo systemctl start beszel.service
 ```
 
 :::

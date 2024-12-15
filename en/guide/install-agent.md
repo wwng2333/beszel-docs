@@ -23,6 +23,10 @@ The `docker-compose.yml` or binary install command is provided for copy/paste in
 
 ## Docker or Podman
 
+::: tip
+Preconfigured `docker-compose.yml` content can be copied the hub's web UI when adding a new system, so in most cases you do not need to set this up manually.
+:::
+
 ::: code-group
 
 ```yaml [docker-compose.yml]
@@ -73,81 +77,137 @@ If you don't need network stats, you can remove that line from the compose file 
 
 ## Binary
 
-There are multiple ways to install using binary files. You can choose one of the methods below that you prefer.
+There are multiple ways to install the binary. Choose your preference below.
 
-### 1. Quick script
+### 1. Quick script (Linux)
+
+::: tip
+A preconfigured command can be copied in the hub's web UI when adding a new system, so in most cases you do not need to run this command manually.
+:::
+
+This command downloads and runs our `install-agent.sh` script.
+
+The script installs the latest binary and creates a systemd service to keep it running after reboot. You may optionally enable automatic daily updates.
 
 - `-p` : Port
-- `-k` : Public Key
+- `-k` : Public Key (enclose in quotes)
 
 ```bash
-curl -sL https://raw.githubusercontent.com/henrygd/beszel/main/supplemental/scripts/install-agent.sh -o  install-agent.sh && chmod +x install-agent.sh && ./install-agent.sh -p <port> -k "<public key>"
+curl -sL https://raw.githubusercontent.com/henrygd/beszel/main/supplemental/scripts/install-agent.sh -o  install-agent.sh && chmod +x install-agent.sh && ./install-agent.sh
 ```
 
-### 2. Manual Download and Startup
+### 2. Manual download and start
 
-<details>
-  <summary>Click to expand/collapse</summary>
+::: details Click to expand/collapse
 
-Download the latest binary from [releases](https://github.com/henrygd/beszel/releases) that matches your server's CPU architecture and run it manually. However, you will need to create a service manually to keep it running.
+#### Download the binary
+
+Download the latest binary from [releases](https://github.com/henrygd/beszel/releases) that matches your server's OS / architecture.
 
 ```bash
 curl -sL "https://github.com/henrygd/beszel/releases/latest/download/beszel-agent_$(uname -s)_$(uname -m | sed 's/x86_64/amd64/' | sed 's/armv7l/arm/' | sed 's/aarch64/arm64/').tar.gz" | tar -xz -O beszel-agent | tee ./beszel-agent >/dev/null && chmod +x beszel-agent
 ```
 
-Running the agent directly:
+#### Start the agent
 
-- `PROT` : Port
+- `PORT` : Port
 - `KEY` : Public Key
 
 ```bash
 PORT=<port> KEY="<public key>" ./beszel-agent
 ```
 
-</details>
-
-### 3. Build and Startup
-
-<details>
-  <summary>Click to expand/collapse</summary>
-
-Beszel are written in Go, so you can easily build them yourself, or cross-compile for different platforms. Please [install Go](https://go.dev/doc/install) first if you haven't already.
-
-#### 1. Git clone & Prepare dependencies
+#### Update the agent
 
 ```bash
-git clone https://github.com/henrygd/beszel.git
-cd beszel && go mod tidy
+./beszel-agent update
 ```
 
-### 4. Build
+#### Create a service (optional)
+
+If your system uses systemd, you can create a service to keep the hub running after reboot.
+
+1. Create a service file in `/etc/systemd/system/beszel.service`.
+
+```ini
+[Unit]
+Description=Beszel Agent Service
+After=network.target
+
+[Service]
+Environment="PORT=$PORT"
+Environment="KEY=$KEY"
+# Environment="EXTRA_FILESYSTEMS=sdb"
+Restart=always
+RestartSec=5
+ExecStart={/path/to/working/directory}/beszel-agent
+
+[Install]
+WantedBy=multi-user.target
+```
+
+2. Enable and start the service.
 
 ```bash
-cd beszel/cmd/agent
-CGO_ENABLED=0 go build -ldflags "-w -s" .
+sudo systemctl daemon-reload
+sudo systemctl enable beszel-agent.service
+sudo systemctl start beszel-agent.service
 ```
 
-:::tip
-If you need to run on different platforms, you can cross-compile using the `GOOS` and `GOARCH` environment variables.
-
-For example, to build for FreeBSD ARM64:
-
-```bash
-GOOS=freebsd GOARCH=arm64 CGO_ENABLED=0 go build -ldflags "-w -s" .
-```
-
-You can see a list of valid options by running `go tool dist list`.
 :::
 
-#### 4. Running the agent directly
+### 3. Manual compile and start
 
-> You will need to create a service manually to keep it running.
+:::: details Click to expand/collapse
 
-- `PROT` : Port
+#### Compile
+
+See [Compiling](./compiling.md) for information on how to compile the hub yourself.
+
+#### Start the agent
+
+- `PORT` : Port
 - `KEY` : Public Key
 
 ```bash
 PORT=<port> KEY="<public key>" ./beszel-agent
 ```
 
-</details>
+#### Update the agent
+
+```bash
+./beszel-agent update
+```
+
+#### Create a service (optional)
+
+If your system uses systemd, you can create a service to keep the hub running after reboot.
+
+1. Create a service file in `/etc/systemd/system/beszel.service`.
+
+```ini
+[Unit]
+Description=Beszel Agent Service
+After=network.target
+
+[Service]
+Environment="PORT=$PORT"
+Environment="KEY=$KEY"
+# Environment="EXTRA_FILESYSTEMS=sdb"
+Restart=always
+RestartSec=5
+ExecStart={/path/to/working/directory}/beszel-agent
+
+[Install]
+WantedBy=multi-user.target
+```
+
+2. Enable and start the service.
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable beszel-agent.service
+sudo systemctl start beszel-agent.service
+```
+
+::::
