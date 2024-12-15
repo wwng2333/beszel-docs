@@ -2,6 +2,10 @@
 
 Beszel supports installation via Docker/ Podman or single binary file.
 
+::: tip
+Check the [Getting Started](./getting-started.md) guide if you're setting up Beszel for the first time.
+:::
+
 ## Docker or Podman
 
 All methods will start the Beszel service on port `8090` and mount the `./beszel_data` directory for persistent storage.

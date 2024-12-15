@@ -1,4 +1,4 @@
-# FAQ / Troubleshooting
+# Common Issues
 
 ## Agent is not connecting
 
@@ -9,7 +9,7 @@ Assuming the agent is running, the connection is probably being blocked by a fir
 
 You can test connectivity by running `telnet <agent-ip> <port>`.
 
-## Connecting the hub and agent on the same system using Docker
+## Connecting hub and agent on the same system using Docker
 
 If using host network mode for the agent but not the hub, add your system using the hostname `host.docker.internal`, which resolves to the internal IP address used by the host. See the [example docker-compose.yml](/supplemental/docker/same-system/docker-compose.yml).
 

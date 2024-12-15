@@ -83,7 +83,7 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
 		{
 			text: 'Troubleshooting',
 			collapsed: false,
-			items: [{ text: 'Common Issues', link: 'faq' }],
+			items: [{ text: 'Common Issues', link: 'common-issues' }],
 		},
 		{
 			text: 'About',

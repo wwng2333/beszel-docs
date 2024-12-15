@@ -2,7 +2,9 @@
 
 Beszel Agent supports installation via Docker / Podman container or single binary file.
 
-<!-- [[toc]] -->
+::: tip
+Check the [Getting Started](./getting-started.md) guide if you're setting up Beszel for the first time.
+:::
 
 ## Requirements
 
