@@ -11,8 +11,11 @@ It has a friendly web interface, simple configuration, and is ready to use out o
   <a href="https://hub.docker.com/r/henrygd/beszel" target="_blank">
     <img src="https://img.shields.io/docker/image-size/henrygd/beszel/0.1.0?logo=docker&label=hub%20image%20size" alt="Agent Docker Image Size" />
   </a>
+  <a href="https://github.com/henrygd/beszel/blob/main/LICENSE" target="_blank">
+    <img src="https://img.shields.io/github/license/henrygd/beszel?color=%239944ee" alt="MIT license" />
+  </a>
   <a href="https://crowdin.com/project/beszel" target="_blank">
-    <img src="https://badges.crowdin.net/beszel/localized.svg" alt="" />
+    <img src="https://badges.crowdin.net/beszel/localized.svg" alt="Crowdin translations" />
   </a>
 </div>
 

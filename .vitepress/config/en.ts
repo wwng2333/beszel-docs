@@ -87,7 +87,8 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
 			collapsed: false,
 			items: [
 				{ text: 'Security', link: 'security' },
-				{ text: 'Contributing', link: 'contributing' },
+				{ text: 'Developer Guide', link: 'developers' },
+				{ text: 'Multilingual and Localization', link: 'multlingual-and-localization' },
 			],
 		},
 	]
