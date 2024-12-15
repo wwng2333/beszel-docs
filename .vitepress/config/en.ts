@@ -1,8 +1,5 @@
-import { createRequire } from 'module'
 import { defineConfig, type DefaultTheme } from 'vitepress'
-
-const require = createRequire(import.meta.url)
-const pkg = require('../../package.json')
+import pkg from '../../package.json'
 
 export const en = defineConfig({
 	lang: 'en-US',

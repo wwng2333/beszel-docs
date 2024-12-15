@@ -1,17 +1,32 @@
+<script setup>
+  import pkg from '../../package.json'
+</script>
+
 # Compiling
 
 Both the hub and agent are written in Go, so you can easily build them yourself, or cross-compile for different platforms. Please [install Go](https://go.dev/doc/install) first if you haven't already.
 
+## Clone the repository
+
+```bash-vue
+# Clone the repository
+git clone --branch v{{pkg.version}} --depth 1 https://github.com/henrygd/beszel.git
+# Navigate to the project directory
+cd beszel/beszel
+```
+
+Commands below assume you are in the project directory (`beszel/beszel`).
+
 ## Using Makefile
 
-Run `make` in `/beszel`. This creates a `build` directory containing the binaries.
+Run `make`. This creates a `build` directory containing the binaries.
 
 ```bash
 # Builds both the agent and hub
 make
 # Builds the agent only
 make build-agent
-# Builds the hub only
+# Builds the hub only (requires Node or Bun)
 make build-hub
 ```
 
@@ -28,7 +43,7 @@ See a list of valid options by running `go tool dist list`.
 ### Prepare dependencies
 
 ```bash
-cd beszel && go mod tidy
+go mod tidy
 ```
 
 ### Agent
@@ -44,12 +59,12 @@ CGO_ENABLED=0 go build -ldflags "-w -s" .
 The hub embeds the web UI in the binary, so you must build the website first. I use [Bun](https://bun.sh/), but you may use Node.js if you prefer:
 
 ```bash
-cd beszel/site
+cd site
 bun install
 bun run build
 ```
 
-Then in `beszel/cmd/hub`:
+Then in `/beszel/cmd/hub`:
 
 ```bash
 CGO_ENABLED=0 go build -ldflags "-w -s" .
