@@ -7,9 +7,9 @@ Contributions are welcome, but it's a good idea to check with us first in a disc
 ## Prerequisites
 
 - Go 1.23+ (for making changes in the Go code)
-- Bun 1.1+ or Node 18+ (for making changes in the Admin UI)
+- Bun 1.1.38+ or Node 18+ (for making changes in the Admin UI)
 
-If you haven't already, you can fork the main repository and clone your fork so that you can work locally:
+If you haven't already, [fork the repository](https://github.com/henrygd/beszel/fork) and clone your fork to work locally:
 
 ```bash
 git clone https://github.com/your_username/beszel.git
@@ -21,13 +21,13 @@ git clone https://github.com/your_username/beszel.git
 
 ## Development environment
 
-There are three processes that need to be started in order to work on the project:
+Three processes need to be started in order to work on the project:
 
-1. The hub - Go
-2. The agent - Go
-3. The web UI - (JavaScript / Vite)
+1. The hub (Go)
+2. The agent (Go)
+3. The web UI (TypeScript / Vite)
 
-There are `make` commands to start each of these processes (run in `/beszel`).
+There are `make` commands to start each of these jobs (run in `/beszel`).
 
 ```bash
 # Start the hub
@@ -44,6 +44,8 @@ Alternatively, you can start all processes at once with combined output:
 KEY="..." make -j dev
 ```
 
+Navigate to [http://localhost:8090](http://localhost:8090) to view the web UI.
+
 ::: tip
-If [`entr`](https://github.com/eradman/entr) is installed on your system, the hub and agent will automatically rebuild when you make changes to the code.
+If [`entr`](https://github.com/eradman/entr) is installed, the hub / agent will automatically rebuild when you save changes to the code.
 :::
