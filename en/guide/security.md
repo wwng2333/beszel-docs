@@ -6,9 +6,15 @@ When the hub is started for the first time, it generates an ED25519 key pair.
 
 The agent's SSH server is configured to accept connections using this key only. It does not provide a pseudo-terminal or accept input, so it's impossible to execute commands on the agent even if your private key is compromised.
 
+## Reporting a Vulnerability
+
+If you find a vulnerability in the latest version, please [submit a private advisory](https://github.com/henrygd/beszel/security/advisories/new).
+
+If it's low severity (use best judgement) you may open an issue instead of an advisory.
+
 ## Network requirements
 
-This is a complete list of ports and remote hosts that Beszel needs to communicate with, based on the default configuration. Using OAuth or S3 backups will require connections to other hosts.
+This is a list of ports and remote hosts that Beszel communicates with, based on the default configuration. Using OAuth or S3 backups will require connections to other hosts.
 
 ### Agent
 

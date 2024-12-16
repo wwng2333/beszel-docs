@@ -2,12 +2,12 @@
 
 For background information, see the [What is Beszel?](./what-is-beszel.md) page.
 
-## 1. Install the Hub
+## 1. Start the hub
 
 Beszel supports installation via Docker/ Podman or single binary file.
 
-- [Docker / Podman](./install-hub#docker-or-podman)
-- [Binary](./install-hub#binary)
+- [Docker / Podman](./hub-installation#docker-or-podman)
+- [Binary](./hub-installation#binary)
 
 <div style="height: 1px; margin: -5px 0 0"></div>
 
@@ -59,7 +59,7 @@ You will be prompted to create an account:
 
 ## 3. Configure your first system
 
-Click the **Add System** button in the top right corner to open the system creation dialog. We're using the local system in this example, but you may use a remote agent instead.
+Click the **Add System** button in the top right corner to open the system creation dialog. We're using localhost in this example, but you may use a remote agent instead.
 
 Do not click the **Add System** button inside the dialog until you've started up the agent.
 
@@ -113,7 +113,7 @@ docker compose up -d
 
 :::: details Binary instructions
 ::: warning The install script is for Linux only
-If you use a different OS, please manually download and run the correct binary for your system. See the [Agent Installation](./install-agent.md#binary) page or the [Compiling](./compiling.md) page for more information.
+If you use a different OS, please manually download and run the correct binary for your system. See the [Agent Installation](./agent-installation.md#binary) page or the [Compiling](./compiling.md) page for more information.
 :::
 
 1. Copy the binary install command from the **Add System** dialog.

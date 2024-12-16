@@ -16,10 +16,9 @@ Alternatively, you can use software like Wireguard or Cloudflare Tunnel ([instru
 
 The `docker-compose.yml` or binary install command is provided for copy/paste in the hub's web UI when adding a new system.
 
-<div style="display: flex;">
-    <img src="/image/agent-1.webp" width="50%" />
-    <img src="/image/agent-2.webp" width="50%" />
-</div>
+<a href="/image/add-system-2.png" target="_blank">
+  <img src="/image/add-system-2.png" height="482" width="946" alt="Add system dialog" />
+</a>
 
 ## Docker or Podman
 

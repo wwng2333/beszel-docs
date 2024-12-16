@@ -1,15 +1,19 @@
-# Monitoring additional disks, partitions, or remote mounts
+# Additional Disks
 
-The method for adding additional disks differs depending on your deployment method.
+You can use Beszel to monitor disks, partitions, or remote mounts.
 
-The charts will use the name of the device or partition if available, and fall back to the folder name. You will not get I/O stats for network mounted drives.
+The charts will use the name of the device or partition if available, and fall back to the directory name. You will not get I/O stats for network mounted drives.
 
 > [!TIP] Finding device information
-> Use `lsblk` to find the names and mount points of your partitions. If you have trouble, set `LOG_LEVEL=debug` and check the agent logs.
+> Use `lsblk` to find the names and mount points of your partitions.
+>
+> If you have trouble, set `LOG_LEVEL=debug` on the agent and check the logs for the lines starting with `DEBUG Disk partitions` and `DEBUG Disk I/O diskstats`.
 
-## Docker
+The configuration differs depending on your deployment method.
 
-Mount a folder from the target filesystem in the container's `/extra-filesystems` directory. For example:
+## Docker agent
+
+Mount a folder from the target filesystem in the container's `/extra-filesystems` directory:
 
 ```yaml
 volumes:
@@ -17,7 +21,11 @@ volumes:
   - /dev/mmcblk0/.beszel:/extra-filesystems/mmcblk0:ro
 ```
 
-## Binary
+::: tip
+If you get disk usage but not I/O (common for encrypted devices) you can specify the device to use for I/O with the mounted directory name. This should be an entry in `/proc/diskstats`. See [0.7.3 release notes](https://github.com/henrygd/beszel/releases/tag/v0.7.3) for more details.
+:::
+
+## Binary agent
 
 Set the `EXTRA_FILESYSTEMS` environment variable to a comma-separated list of devices, partitions, or mount points to monitor. For example:
 

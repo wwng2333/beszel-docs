@@ -5,13 +5,13 @@
 Assuming the agent is running, the connection is probably being blocked by a firewall. You have two options:
 
 1. Add an inbound rule to the agent system's firewall(s) to allow TCP connections to the port. Check any active firewalls, like iptables, and your cloud provider's firewall settings if applicable.
-2. Alternatively, use software like [WireGuard](https://www.wireguard.com/), [Cloudflare Tunnel](https://www.cloudflare.com/products/tunnel/), or [Tailscale](https://tailscale.com/) to securely bypass your firewall.
+2. Alternatively, use software like Wireguard or Cloudflare Tunnel ([instructions](https://github.com/henrygd/beszel/discussions/250)) to securely bypass the firewall.
 
 You can test connectivity by running `telnet <agent-ip> <port>`.
 
 ## Connecting hub and agent on the same system using Docker
 
-If using host network mode for the agent but not the hub, add your system using the hostname `host.docker.internal`, which resolves to the internal IP address used by the host. See the [example docker-compose.yml](/supplemental/docker/same-system/docker-compose.yml).
+If using host network mode for the agent but not the hub, add your system using the hostname `host.docker.internal`, which resolves to the internal IP address used by the host. See the [Getting Started](./getting-started.md) guide for a full `docker-compose.yml` example.
 
 If using host network mode for both, you can use `localhost` as the hostname.
 
@@ -33,9 +33,9 @@ If container charts show empty data or don't appear at all, you may need to enab
 
 <https://akashrajpurohit.com/blog/resolving-missing-memory-stats-in-docker-stats-on-raspberry-pi/>
 
-## Docker Containers Are Not Populating Reliably
+## Docker containers are not populating reliably
 
-Try upgrading your Docker version on the agent system. This issue was observed on a machine running version 24 and was resolved by upgrading to version 27.
+Upgrade your Docker version on the agent system if possible. There is a bug in Docker 24, and possibly earlier versions, that may cause this issue. We've added a workaround to the agent to mitigate this issue, but it's not a perfect fix.
 
 ## Month / week records are not populating reliably
 

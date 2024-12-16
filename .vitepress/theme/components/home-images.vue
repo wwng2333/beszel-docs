@@ -30,7 +30,7 @@ export default {
 		startSlideShow() {
 			setInterval(() => {
 				this.topIndex = (this.topIndex + 1) % this.images.length
-			}, 4000)
+			}, 3500)
 		},
 	},
 	mounted() {

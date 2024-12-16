@@ -1,6 +1,6 @@
 # OAuth / OIDC
 
-You can authenticate users with an OAuth2 provider, like Google, GitHub, or Microsoft, or a custom OpenID Connect provider, like Authelia, Authentik, Zitadel, or Hanko.
+You can authenticate users with an OAuth2 provider, like GitHub or Google, or a custom OpenID Connect provider, like Authelia or Zitadel.
 
 > [!TIP] Redirect URL
 > When creating your OAuth2 app, use **`<your-beszel-url>/api/oauth2-redirect`** as the callback/redirect URL.

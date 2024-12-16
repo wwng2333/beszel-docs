@@ -26,7 +26,15 @@ User=1000 # [!code ++]
 ```
 
 ```bash [podman run]
-podman run -d --name=beszel-agent --network=host --user 1000 -v /run/user/1000/podman/podman.sock:/run/user/1000/podman/podman.sock -e KEY="..." henrygd/beszel-agent:latest
+podman run -d \
+  --name beszel-agent \
+  --user 1000 \
+  --network host \
+  --restart unless-stopped \
+  -v /var/run/docker.sock:/var/run/docker.sock:ro \
+  -e KEY="<public key>" \
+  -e PORT=45876 \
+  docker.io/henrygd/beszel-agent:latest
 ```
 
 ::: code-group
