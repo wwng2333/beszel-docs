@@ -15,7 +15,7 @@ git clone --branch v{{pkg.version}} --depth 1 https://github.com/henrygd/beszel.
 cd beszel/beszel
 ```
 
-Commands below assume you are in the project directory (`beszel/beszel`).
+Commands below assume you are in the project directory (`/beszel`).
 
 ## Using Makefile
 

@@ -1,4 +1,4 @@
-# GPU Monitoring (binary agent only)
+# GPU Monitoring
 
 Beszel can monitor GPU usage, temperature, and power draw.
 

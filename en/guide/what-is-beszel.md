@@ -4,18 +4,18 @@ Beszel is a lightweight server monitoring platform that includes Docker statisti
 
 It has a friendly web interface, simple configuration, and is ready to use out of the box. It supports automatic backup, multi-user, OAuth authentication, and API access.
 
-<div style="display: flex; flex-wrap: wrap; gap: .5em; margin: 1.6em 0 -.3em; min-height:20px">
+<div style="display: flex; flex-wrap: wrap; gap: .5em; margin: 1.6em 0 -.3em">
   <a href="https://hub.docker.com/r/henrygd/beszel-agent" target="_blank">
-    <img src="https://img.shields.io/docker/image-size/henrygd/beszel-agent/0.6.0?logo=docker&label=agent%20image%20size" alt="Hub Docker Image Size" />
+    <img height="20" width="171" src="https://img.shields.io/docker/image-size/henrygd/beszel-agent/0.6.0?logo=docker&label=agent%20image%20size" alt="Hub Docker Image Size" />
   </a>
   <a href="https://hub.docker.com/r/henrygd/beszel" target="_blank">
-    <img src="https://img.shields.io/docker/image-size/henrygd/beszel/0.1.0?logo=docker&label=hub%20image%20size" alt="Agent Docker Image Size" />
+    <img height="20" width="169" src="https://img.shields.io/docker/image-size/henrygd/beszel/0.1.0?logo=docker&label=hub%20image%20size" alt="Agent Docker Image Size" />
   </a>
   <a href="https://github.com/henrygd/beszel/blob/main/LICENSE" target="_blank">
-    <img src="https://img.shields.io/github/license/henrygd/beszel?color=%239944ee" alt="MIT license" />
+    <img height="20" width="78" src="https://img.shields.io/github/license/henrygd/beszel?color=%239944ee" alt="MIT license" />
   </a>
   <a href="https://crowdin.com/project/beszel" target="_blank">
-    <img src="https://badges.crowdin.net/beszel/localized.svg" alt="Crowdin translations" />
+    <img height="20" width="97" src="https://badges.crowdin.net/beszel/localized.svg" alt="Crowdin translations" />
   </a>
 </div>
 
@@ -39,13 +39,18 @@ Beszel consists of two main components: the **hub** and the **agent**.
 
 ## Screenshots
 
-[![Dashboard](/image/dashboard.png)](/image/dashboard.png)
-
-[![System page](/image/system.png)](/image/system.png)
-
-<!-- [![Alerts](/image/alerts.png)](/image/alerts.png) -->
-
-[![Notification Settings](/image/settings-notifications.png)](/image/settings-notifications.png)
+<div style="display: grid; gap: 15px;">
+  <a href="/image/dashboard.png" target="_blank">
+    <img src="/image/dashboard.png" height="967" width="1419" alt="Dashboard" /> 
+  </a>
+  <a href="/image/system.png" target="_blank">
+    <img src="/image/system.png" height="968" width="1424" alt="System page" /> 
+  </a>
+  <!-- [![Alerts](/image/alerts.png)](/image/alerts.png) -->
+  <a href="/image/settings-notifications.png" target="_blank">
+    <img src="/image/settings-notifications.png" height="928" width="1429" alt="Notification Settings" /> 
+  </a>
+</div>
 
 ## Supported metrics
 

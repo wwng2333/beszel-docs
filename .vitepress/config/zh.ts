@@ -80,13 +80,43 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
 			items: [
 				{ text: '什么是 Beszel？', link: 'what-is-beszel' },
 				{ text: '快速开始', link: 'getting-started' },
-				{ text: '安装 Hub', link: 'hub-installation' },
-				{ text: '安装 Agent', link: 'agent-installation' },
 			],
 		},
 		{
-			text: '贡献',
-			items: [{ text: '多语言和本地化', link: 'i18n' }],
+			text: '安装',
+			collapsed: false,
+			items: [
+				{ text: 'Hub 安装', link: 'hub-installation' },
+				{ text: 'Agent 安装', link: 'agent-installation' },
+			],
+		},
+		{
+			text: '配置/使用指南',
+			collapsed: false,
+			items: [
+				{ text: '其他磁盘', link: 'additional-disks' },
+				{ text: '编译', link: 'compiling' },
+				{ text: '环境变量', link: 'environment-variables' },
+				{ text: 'GPU 监控', link: 'gpu' },
+				{ text: 'OAuth / OIDC 认证', link: 'oauth' },
+				{ text: 'Podman 监控', link: 'podman' },
+				{ text: 'REST API', link: 'rest-api' },
+				{ text: '用户角色', link: 'user-roles' },
+			],
+		},
+		{
+			text: '故障排除',
+			collapsed: false,
+			items: [{ text: '常见问题', link: 'common-issues' }],
+		},
+		{
+			text: '关于',
+			collapsed: false,
+			items: [
+				{ text: '安全', link: 'security' },
+				{ text: '开发者指南', link: 'developer-guide' },
+				{ text: '多语言和本地化', link: 'multlingual-and-localization' },
+			],
 		},
 	]
 }

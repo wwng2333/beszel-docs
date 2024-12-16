@@ -213,6 +213,9 @@
 		font-size: 53px;
 		line-height: 1.1;
 	}
+	.VPHomeHero .text:lang(zh) {
+		font-size: 48px;
+	}
 	.VPHomeHero .tagline {
 		font-size: 22px;
 		line-height: 1.3;

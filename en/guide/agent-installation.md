@@ -113,7 +113,7 @@ curl -sL "https://github.com/henrygd/beszel/releases/latest/download/beszel-agen
 - `KEY` : Public Key
 
 ```bash
-PORT=<port> KEY="<public key>" ./beszel-agent
+PORT=45876 KEY="<public key>" ./beszel-agent
 ```
 
 #### Update the agent
@@ -169,7 +169,7 @@ See [Compiling](./compiling.md) for information on how to compile the hub yourse
 - `KEY` : Public Key
 
 ```bash
-PORT=<port> KEY="<public key>" ./beszel-agent
+PORT=45876 KEY="<public key>" ./beszel-agent
 ```
 
 #### Update the agent

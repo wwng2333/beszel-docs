@@ -1,4 +1,4 @@
-# Getting started
+# Getting Started
 
 For background information, see the [What is Beszel?](./what-is-beszel.md) page.
 
@@ -55,7 +55,9 @@ After starting the hub, navigate to http://localhost:8090 or your chosen address
 
 You will be prompted to create an account:
 
-[![Screenshot of user creation form](/image/admin-creation.png)](/image/admin-creation.png)
+<a href="/image/admin-creation.png" target="_blank">
+  <img src="/image/admin-creation.png" height="485" width="671" alt="Screenshot of user creation form" />
+</a>
 
 ## 3. Configure your first system
 
@@ -63,14 +65,17 @@ Click the **Add System** button in the top right corner to open the system creat
 
 Do not click the **Add System** button inside the dialog until you've started up the agent.
 
-[![Screenshot of system creation form](/image/add-system.png)](/image/add-system.png)
+<a href="/image/add-system.png" target="_blank">
+  <img src="/image/add-system.png" height="506" width="681" alt="Screenshot of system creation form" />
+</a>
 
 ## 4. Start the agent
 
 :::: details Docker instructions
 
-> [!TIP] NOTE
-> If you prefer to set up containers in a different way, please feel free to do so.
+::: tip NOTE
+If you prefer to set up containers in a different way, please feel free to do so.
+:::
 
 1. Copy the `docker-compose.yml` content from the **Add System** dialog.
 
@@ -129,6 +134,8 @@ Now that the agent is running, click the **Add System** button in the dialog.
 
 You will see the new system in table. If it flips to green, you're good to go.
 
-[![Screenshot of system creation form](/image/new-system.png)](/image/new-system.png)
+<a href="/image/new-system.png" target="_blank">
+  <img src="/image/new-system.png" height="263" width="1418" alt="Screenshot of system creation form" />
+</a>
 
 If it changes to red, check the [Common Issues](./common-issues.md) page.

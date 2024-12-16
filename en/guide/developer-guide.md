@@ -15,9 +15,10 @@ If you haven't already, [fork the repository](https://github.com/henrygd/beszel/
 git clone https://github.com/your_username/beszel.git
 ```
 
-> [!IMPORTANT]
-> It is recommended to create a new branch from master for each of your bugfixes and features.
-> This is required if you are planning to submit multiple PRs in order to keep the changes separate for review until they eventually get merged.
+::: tip Separate branches for separate changes
+It is recommended to create a new branch for each of your bugfixes and features.
+This is required if you are planning to submit multiple PRs in order to keep the changes separate for review until they eventually get merged.
+:::
 
 ## Development environment
 
