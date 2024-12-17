@@ -40,7 +40,7 @@ services:
 
 ::::
 
-:::: details Click to view instructions for running `docker compose` on Linux
+:::: details Click to view instructions for running `docker compose`
 
 ::: tip NOTE
 If you prefer to set up containers in a different way, please feel free to do so.

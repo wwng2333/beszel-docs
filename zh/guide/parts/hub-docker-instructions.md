@@ -40,7 +40,7 @@ services:
 
 ::::
 
-:::: details 单击查看在 Linux 上运行 `docker compose` 的说明
+:::: details 单击查看运行 `docker compose` 的说明
 
 ::: tip 注意
 
