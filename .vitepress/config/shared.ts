@@ -11,7 +11,14 @@ export const shared = defineConfig({
 	rewrites: {
 		'en/:rest*': ':rest*',
 	},
-	head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/icon.svg' }]],
+	head: [
+		['link', { rel: 'icon', type: 'image/svg+xml', href: '/icon.svg' }],
+		['meta', { property: 'og:type', content: 'website' }],
+		['meta', { property: 'og:site_name', content: 'Beszel' }],
+		['meta', { property: 'og:title', content: 'Beszel | Simple, lightweight server monitoring' }],
+		['meta', { property: 'og:url', content: 'https://beszel.dev' }],
+		['meta', { property: 'og:image', content: 'https://beszel.dev/image/social.png' }],
+	],
 	themeConfig: {
 		// https://vitepress.dev/reference/default-theme-config
 		// logo: '/logo.svg',
