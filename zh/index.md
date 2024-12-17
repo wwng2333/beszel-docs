@@ -2,7 +2,8 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
-title: Home
+title: Beszel
+titleTemplate: 轻量易用的服务器监控
 
 hero:
   width: 1300
