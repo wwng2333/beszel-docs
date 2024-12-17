@@ -14,7 +14,7 @@ If it's low severity (use best judgement) you may open an issue instead of an ad
 
 ## Network requirements
 
-This is a list of ports and remote hosts that Beszel communicates with, based on the default configuration. Using OAuth or S3 backups will require connections to other hosts.
+This is a list of ports and remote hosts that Beszel communicates with, based on the default configuration. Using SMTP for email or S3 for backups will require connections to other hosts.
 
 ### Agent
 
