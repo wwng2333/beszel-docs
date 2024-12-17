@@ -3,7 +3,7 @@ import pkg from '../../package.json'
 
 export const en = defineConfig({
 	lang: 'en-US',
-	description: 'Lightweight server monitoring with historical data, docker stats, and alerts',
+	description: 'Lightweight server monitoring with historical data, Docker stats, and alerts.',
 	themeConfig: {
 		nav: nav(),
 
