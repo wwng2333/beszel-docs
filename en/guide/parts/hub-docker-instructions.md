@@ -2,7 +2,7 @@
 
 ::: tip IMPORTANT
 
-This configuration should work out of the box, but you must follow these steps when adding a new system in the web UI.
+This configuration should work out of the box, but you must follow these steps when adding the system in the web UI:
 
 1. Update the `KEY` value with your public key, then run `docker compose up -d` again to restart the agent.
 
