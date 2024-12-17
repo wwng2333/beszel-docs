@@ -8,16 +8,33 @@ import BuyMeACoffee from './components/buy-me-a-coffee.vue'
 import HomeImages from './components/home-images.vue'
 
 const { lang } = useData()
+
+// redirect to correct language
+if (inBrowser) {
+	;(() => {
+		const lsLang = localStorage.getItem('lang')
+		const { pathname } = window.location
+		// if not set (first visit) check navigator language and redirect to correct language
+		if (!lsLang) {
+			const navigatorLang = navigator.language.split('-')[0]
+			if (['zh'].includes(navigatorLang)) {
+				window.location.pathname = `/${navigatorLang}/${pathname.replace(/^\//, '')}`
+			}
+			return
+		}
+		if (lsLang === 'en') {
+			return
+		}
+		if (!pathname.startsWith(`/${lsLang}/`)) {
+			window.location.pathname = `/${lsLang}/${pathname.replace(/^\//, '')}`
+		}
+	})()
+}
+
+// watch for user language changes and set preference in local storage
 watchEffect(() => {
 	if (inBrowser) {
-		// if cookie is not set and language starts with 'zh', check if path starts with '/zh/'
-		// if not, redirect to '/zh/' while maintaining the path
-		if (!document.cookie.includes('nf_lang') && lang.value.startsWith('zh')) {
-			if (!window.location.pathname.startsWith('/zh/')) {
-				window.location.pathname = '/zh/' + window.location.pathname.replace(/^\//, '')
-			}
-		}
-		document.cookie = `nf_lang=${lang.value}; expires=Mon, 1 Jan 2030 00:00:00 UTC; path=/`
+		lang.value && localStorage.setItem('lang', lang.value.split('-')[0])
 	}
 })
 </script>
@@ -28,7 +45,7 @@ watchEffect(() => {
 			<HomeImages />
 		</template>
 		<template #sidebar-nav-after>
-			<BuyMeACoffee />
+			<BuyMeACoffee :lang="lang" />
 		</template>
 	</DefaultTheme.Layout>
 </template>
