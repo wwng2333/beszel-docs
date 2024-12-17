@@ -46,6 +46,8 @@ podman run -d \
 
 :::
 
+<!--@include: ./parts/hub-docker-instructions.md-->
+
 ## Binary
 
 There are multiple ways to install the binary. Choose your preference below.

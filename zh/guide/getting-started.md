@@ -4,50 +4,14 @@
 
 ## 1. 启动中心 (hub)
 
-Beszel 支持通过 Docker/ Podman 或单个二进制文件进行安装。
+中心可以通过单独的二进制文件或 Docker / Podman 容器运行。
 
-- [Docker / Podman](./hub-installation#docker-或-podman)
 - [二进制文件](./hub-installation#二进制文件)
+- [Docker / Podman](./hub-installation#docker-或-podman)
 
 <div style="height: 1px; margin: -5px 0 0"></div>
 
-::: details 点击查看完整的 `docker-compose.yml` 配置，包括本地代理
-
-以下示例应该可以直接使用。
-
-在步骤 3 中，使用 `host.docker.internal` 作为 **主机/IP** 值。
-
-记得用你的公钥更新 `KEY` 值，然后再次运行 `docker compose up -d`。
-
-::: code-group
-
-```yaml [docker-compose.yml]
-services:
-  beszel:
-    image: henrygd/beszel:latest
-    container_name: beszel
-    restart: unless-stopped
-    extra_hosts:
-      - host.docker.internal:host-gateway
-    ports:
-      - 8090:8090
-    volumes:
-      - ./beszel_data:/beszel_data
-
-  beszel-agent:
-    image: henrygd/beszel-agent:latest
-    container_name: beszel-agent
-    restart: unless-stopped
-    network_mode: host
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    environment:
-      PORT: 45876
-      # 保留引号，不要删除
-      KEY: '使用“添加系统”对话框复制的公钥进行更新'
-```
-
-:::
+<!--@include: ./parts/hub-docker-instructions.md-->
 
 ## 2. 创建管理员用户
 

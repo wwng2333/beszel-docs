@@ -4,50 +4,14 @@ For background information, see the [What is Beszel?](./what-is-beszel.md) page.
 
 ## 1. Start the hub
 
-Beszel supports installation via Docker/ Podman or single binary file.
+The hub can be run with a single binary file or with Docker / Podman.
 
-- [Docker / Podman](./hub-installation#docker-or-podman)
 - [Binary](./hub-installation#binary)
+- [Docker or Podman](./hub-installation#docker-or-podman)
 
 <div style="height: 1px; margin: -5px 0 0"></div>
 
-::: details Click to view complete `docker-compose.yml` config including local agent
-
-The following example should work out of the box.
-
-In step 3, use `host.docker.internal` as the **Host / IP** value.
-
-Remember to update the `KEY` value with your public key, then run `docker compose up -d` again.
-
-::: code-group
-
-```yaml [docker-compose.yml]
-services:
-  beszel:
-    image: henrygd/beszel:latest
-    container_name: beszel
-    restart: unless-stopped
-    extra_hosts:
-      - host.docker.internal:host-gateway
-    ports:
-      - 8090:8090
-    volumes:
-      - ./beszel_data:/beszel_data
-
-  beszel-agent:
-    image: henrygd/beszel-agent:latest
-    container_name: beszel-agent
-    restart: unless-stopped
-    network_mode: host
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    environment:
-      PORT: 45876
-      # Do not remove quotes around the key
-      KEY: 'UPDATE WITH YOUR PUBLIC KEY (copy from "Add system" dialog)'
-```
-
-:::
+<!-- @include: ./parts/hub-docker-instructions.md -->
 
 ## 2. Create an admin user
 

@@ -46,6 +46,8 @@ podman run -d \
 
 :::
 
+<!--@include: ./parts/hub-docker-instructions.md-->
+
 ## 二进制文件
 
 安装二进制文件有多种方法。 请选择您喜欢的方式。
