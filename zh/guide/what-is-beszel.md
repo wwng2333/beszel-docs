@@ -43,8 +43,8 @@ Beszel 由两个主要组件组成：**中心 (hub)** 和 **代理 (agent)**。
   <a href="/image/dashboard.png" target="_blank">
     <img src="/image/dashboard.png" height="967" width="1419" alt="仪表板" /> 
   </a>
-  <a href="/image/system.png" target="_blank">
-    <img src="/image/system.png" height="968" width="1424" alt="系统页面" /> 
+  <a href="/image/system-full.png" target="_blank">
+    <img src="/image/system-full.png" height="2551" width="1422" alt="系统页面" /> 
   </a>
   <a href="/image/settings-notifications.png" target="_blank">
     <img src="/image/settings-notifications.png" height="928" width="1429" alt="通知设置" /> 
