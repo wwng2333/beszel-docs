@@ -8,9 +8,9 @@
 
 ## 报告漏洞
 
-如果您发现最新版本存在漏洞，请 [提交私人建议](https://github.com/henrygd/beszel/security/advisories/new)。
+如果您发现最新版本存在严重的安全漏洞，请 [提交漏洞报告](https://github.com/henrygd/beszel/security/advisories/new)。
 
-如果漏洞严重性较低（请自行判断），您可以打开一个 issue 而不是建议。
+如果漏洞严重性较低（请自行判断），您可以提交一个 issue。
 
 ## 网络需求
 
@@ -43,4 +43,4 @@
 | 远程主机   | 端口  | 用途                                      |
 | ---------- | ----- | ----------------------------------------- |
 | agents     | 45876 | 与您的代理程序的 SSH 连接                 |
-| github.com | 443   | 检查/下载更新（如果使用 Docker 则不需要） |
+| github.com | 443   | 检查/下载更新（如果使用 Docker 则不需要） | 
