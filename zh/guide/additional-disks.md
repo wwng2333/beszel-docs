@@ -30,6 +30,15 @@ volumes:
 
 将 `EXTRA_FILESYSTEMS` 环境变量设置为要监视的设备、分区或挂载点的逗号分隔列表。例如：
 
-```bash
-EXTRA_FILESYSTEMS="sdb,sdc1,mmcblk0,/mnt/network-share"
+::: code-group
+
+```bash [bash]
+EXTRA_FILESYSTEMS="sdb,sdc1,mmcblk0,/mnt/network-share" KEY="..." ./beszel-agent
 ```
+
+```ini [beszel-agent.service]
+[Service]
+Environment="EXTRA_FILESYSTEMS=sdb,sdc1,mmcblk0,/mnt/network-share"
+```
+
+:::
