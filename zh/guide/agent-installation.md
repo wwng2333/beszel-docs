@@ -126,7 +126,7 @@ PORT=45876 KEY="<公钥>" ./beszel-agent
 
 如果您的系统使用 systemd，您可以创建一个服务以使中心在重新启动后继续运行。
 
-1. 在 `/etc/systemd/system/beszel.service` 中创建一个服务文件。
+1. 在 `/etc/systemd/system/beszel-agent.service` 中创建一个服务文件。
 
 ```ini
 [Unit]
@@ -182,7 +182,7 @@ PORT=45876 KEY="<公钥>" ./beszel-agent
 
 如果您的系统使用 systemd，您可以创建一个服务以使中心在重新启动后继续运行。
 
-1. 在 `/etc/systemd/system/beszel.service` 中创建一个服务文件。
+1. 在 `/etc/systemd/system/beszel-agent.service` 中创建一个服务文件。
 
 ```ini
 [Unit]
