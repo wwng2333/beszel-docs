@@ -30,6 +30,9 @@ It should be possible to get usage and system power using `tegrastats`. I will t
 
 ## Intel GPUs
 
-Intel GPUs are not currently supported because I don't have an Intel GPU to test with.
+Intel GPUs are not currently supported for two reasons:
 
-It should be a somewhat similar implementation to the others using `xpu-smi` or `intel_gpu_top`. If you'd like to try contributing, please reply to [issue #262](https://github.com/henrygd/beszel/issues/262).
+1. I don't have an Intel GPU to test with.
+2. There doesn't seem to be a straightforward utility like `nvidia-smi` to get utilization and memory usage.
+
+Please see [issue #262](https://github.com/henrygd/beszel/issues/262) for more information.
