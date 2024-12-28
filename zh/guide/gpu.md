@@ -31,6 +31,9 @@ Jetson 不兼容 `nvidia-smi`，目前也不受支持。
 
 ## Intel GPU
 
-由于我没有可用于测试的 Intel GPU，因此目前不支持 Intel GPU。
+由于以下两个原因，目前不支持英特尔显卡：
 
-实现应该与其他使用 `xpu-smi` 或 `intel_gpu_top` 的 GPU 类似。如果您想尝试贡献代码，请回复 [issue #262](https://github.com/henrygd/beszel/issues/262)。
+1. 我没有可用于测试的英特尔显卡。
+2. 似乎没有像 `nvidia-smi` 这样可以直接获取利用率和内存使用情况的简单工具。
+
+有关更多信息，请参阅 [issue #262](https://github.com/henrygd/beszel/issues/262)。

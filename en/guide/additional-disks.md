@@ -30,6 +30,15 @@ If you get disk usage but not I/O (common for encrypted devices) you can specify
 
 Set the `EXTRA_FILESYSTEMS` environment variable to a comma-separated list of devices, partitions, or mount points to monitor. For example:
 
-```bash
-EXTRA_FILESYSTEMS="sdb,sdc1,mmcblk0,/mnt/network-share"
+::: code-group
+
+```bash [bash]
+EXTRA_FILESYSTEMS="sdb,sdc1,mmcblk0,/mnt/network-share" KEY="..." ./beszel-agent
 ```
+
+```ini [beszel-agent.service]
+[Service]
+Environment="EXTRA_FILESYSTEMS=sdb,sdc1,mmcblk0,/mnt/network-share"
+```
+
+:::

@@ -126,7 +126,7 @@ PORT=45876 KEY="<public key>" ./beszel-agent
 
 If your system uses systemd, you can create a service to keep the hub running after reboot.
 
-1. Create a service file in `/etc/systemd/system/beszel.service`.
+1. Create a service file in `/etc/systemd/system/beszel-agent.service`.
 
 ```ini
 [Unit]
@@ -182,7 +182,7 @@ PORT=45876 KEY="<public key>" ./beszel-agent
 
 If your system uses systemd, you can create a service to keep the hub running after reboot.
 
-1. Create a service file in `/etc/systemd/system/beszel.service`.
+1. Create a service file in `/etc/systemd/system/beszel-agent.service`.
 
 ```ini
 [Unit]
